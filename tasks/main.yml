@@ -1,0 +1,10 @@
+---
+- name: Check python
+  command: python -V
+  changed_when: False
+  ignore_errors: True
+  register: python_version
+
+- name: Set alternative python path
+  command: alternatives --set python "{{ set_alternative_python_path.python_path }}"
+  when: python_version.rc != 0
