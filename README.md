@@ -1,13 +1,13 @@
-cloud3rsio.phpbuild
+cloud3rsio.set_alternative_python_path
 =========
 
-Install php-build.
+Set alternative python path.
 
 Installation
 ------------
 
 ```bash
-$ ansible-galaxy install cloud3rsio.phpbuild
+$ ansible-galaxy install cloud3rsio.set_alternative_python_path
 ```
 
 Requirements
@@ -20,15 +20,12 @@ Role Variables
 
 | Key | Default Value | Type |
 | ------------- | ------------- | ------------- |
-| `phpbuild_packages` | Reference to [defaults/main.yml](defaults/main.yml) | List |
-| `phpbuild_destination` | `/usr/local/php-build` | String |
-| `phpbuild_version` | `master` | String |
+| `set_alternative_python_path.python_path` | `/usr/bin/python3` | String |
 
 Dependencies
 ------------
 
-- `cloud3rsio.yumrepo_epel`
-- `cloud3rsio.yumrepo_remi`
+Nothing.
 
 Example Playbook
 ----------------
@@ -36,7 +33,7 @@ Example Playbook
 ```yaml
 - hosts: all
   roles:
-    - role: cloud3rsio.phpbuild
+    - role: cloud3rsio.set_alternative_python_path
 ```
 
 License
